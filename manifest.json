@@ -28,5 +28,6 @@
 			"id": "se.restaurangonline.hungrig"
 		}
 	],
-	"start_url": "./index.html"
+	"start_url": "./index.html",
+	"display": "standalone"
 }
