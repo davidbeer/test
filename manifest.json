@@ -2,6 +2,7 @@
 	"name": "Hungrig.se",
 	"short_name": "Hungrig.se",
 	"description": "Order food on the native application",
+	"background_color": "#2196F3",
 	"icons": [
 	{
 		"src": "faveicon-32x32.png",
@@ -21,8 +22,5 @@
 		"type": "image/png"
 	}],
 	"start_url": ".",
-	"display": "standalone",
-	"related_applications": [{
-    "platform": "web"
-	}]
+	"display": "standalone"
 }
