@@ -23,21 +23,22 @@
 
     <p>To see if this example works, come back in another day and you will see the banner.</p>
     <p>For testing we encourage you to force the banner to appear by setting the chrome://flags/#bypass-app-banner-engagement-checks flag.</p>
-    <script> 
-      window.addEventListener('load', function() {
-  
-        var outputElement = document.getElementById('output');
-         navigator.serviceWorker.register('service-worker.js', { scope: './' }).then(function(registration) {
-         // Registration was successful
-         console.log('ServiceWorker registration successful with scope: ', registration.scope);
-         }, function(err) {
-           // registration failed :(
-           console.log('ServiceWorker registration failed: ', err);
-         });       
-        window.addEventListener('beforeinstallprompt', function(e) {
-          outputElement.textContent = 'beforeinstallprompt Event fired';
+   <script>
+        window.addEventListener('load', function() {
+            var outputElement = document.getElementById('output');
+            navigator.serviceWorker.register('service-worker.js', { scope: './' })
+                .then(function(r) {
+                    console.log('registered service worker');
+                })
+                .catch(function(whut) {
+                    console.error('uh oh... ');
+                    console.error(whut);
+                });
+
+            window.addEventListener('beforeinstallprompt', function(e) {
+                outputElement.textContent = 'beforeinstallprompt Event fired';
+            });
         });
-      });
     </script>
   </body>
 </html>
